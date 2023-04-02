@@ -1,0 +1,92 @@
+(undo-tree-save-format-version . 1)
+"f26dfcfa587c9aab212a6752b3bd2e81830d58ba"
+[nil nil nil nil (25362 57835 888322 504000) 0 nil]
+([nil nil (("t
+; :program
+; :memory-pointer
+; :memory
+; :func-stack
+; :cycle-stack
+
+(def operators {\"+\" (fn [context]
+                      (merge context {
+                                      :memory (assoc
+                                                (get context :memory)
+                                                (get context :memory-pointer)
+                                                (+
+                                                  (get (get context :memory) (get context :memory-pointer))
+                                                  1))
+                                      }))
+                \"-\" (fn [context]
+                      (merge context {
+                                      :memory (assoc
+                                                (get context :memory)
+                  " . 53) (undo-tree-id11 . -814) (undo-tree-id12 . -814) (undo-tree-id13 . -814) (undo-tree-id14 . -814) 867 (t 25362 23932 443565 283000)) nil (25362 57835 888321 386000) 0 nil])
+([nil nil (("                              (get context :memory-pointer)
+                                                (-
+                                                  (get (get context :memory) (get context :memory-pointer))
+                                                  1))
+                                      }))
+                \">\" (fn [context]
+                      (merge context {
+                                      :memory-pointer (+ (get context :memory-pointer) 1)
+                                      })
+                      )
+                \"<\" (fn [context]
+                      (merge context {
+                                      :memory-pointer (- (get context :memory-pointer) 1)
+                                      }))
+                \".\" (fn [context]
+                      ())
+                \"[\" (fn [context]
+                      ())
+                \"]\" (fn [context]
+                      ())
+                })" . 53) (undo-tree-id7 . -946) (undo-tree-id8 . -946) (undo-tree-id9 . -946) (undo-tree-id10 . -946) 999) nil (25362 57835 888317 931000) 0 nil])
+([nil nil (("x
+(def ctx {
+          :program \"+++++++++++>++++++++<-->+\"
+          :memory-pointer 0
+          :memory [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+          })
+
+(defn do-operation [operator ctx]
+   ((get operators operator) ctx))
+
+(println ctx)
+
+(for [operator (get ctx :program)] (def ctx (do-operation operator ctx)))
+
+;(def ctx (do-operation \"+\" ctx))
+;(def ctx (do-operation \"+\" ctx))
+;(def ctx (do-operation \">\" ctx))
+;(def ctx (do-operation \"-\" ctx))
+
+(println ctx)
+" . 52) (undo-tree-id2 . -469) (undo-tree-id3 . -469) (undo-tree-id4 . -469) (undo-tree-id5 . -1) (undo-tree-id6 . -469) 521) nil (25362 57835 888314 367000) 0 nil])
+([nil nil ((52 . 521)) nil (25362 57835 888309 394000) 0 nil])
+([nil nil ((53 . 999)) nil (25362 57835 888308 805000) 0 nil])
+([nil nil ((53 . 867)) nil (25362 57835 888307 975000) 0 nil])
+([nil nil ((1427 . 1896) 1426 (t 25362 23932 443565 283000)) nil (25362 57835 888306 742000) 0 nil])
+([nil current (("x
+(def ctx {
+          :program \"+++++++++++>++++++++<-->+\"
+          :memory-pointer 0
+          :memory [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+          })
+
+(defn do-operation [operator ctx]
+   ((get operators operator) ctx))
+
+(println ctx)
+
+(for [operator (get ctx :program)] (def ctx (do-operation operator ctx)))
+
+;(def ctx (do-operation \"+\" ctx))
+;(def ctx (do-operation \"+\" ctx))
+;(def ctx (do-operation \">\" ctx))
+;(def ctx (do-operation \"-\" ctx))
+
+(println ctx)
+" . 1427) (undo-tree-id0 . -469) (undo-tree-id1 . -468)) nil (25362 57835 888303 216000) 0 nil])
+nil
